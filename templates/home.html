@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% for article in object_list %}
+    <li><a href="{% url 'details' article.pk %}">{{ article.title }}</a></li>
+    <a href="{% url 'update' article.pk%}">Update</a>
+    <a href="{% url 'delete' article.pk%}">Delete</a>
+    <br><br>
+{% endfor %}
+<br><br><br>
+<a style="color: red;" href="{% url 'add' %}"> Add post</a>
+{% endblock main %}
